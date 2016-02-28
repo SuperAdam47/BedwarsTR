@@ -41,11 +41,21 @@ private $yteam;
     public function onEnable(){
       $this->getLogger()->info("§8[§cBed§4WarsTR§8]§a Plugin aktifleştirildi");
       $this->getScheduler()->getschedulerRepeatingTask(new CallbackTask([$this,"lobbysan"]),20);
+      @mkdir($this->getDataFolder(), 0777, true);
+      $this->config=new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
       $this->saniye=0;
+      if(!$this->config->exists("bwlobby")){
+        $this->config->set("bwlobby","bw");
+      }
+      if(!$this->config->exists("zaman")){
+        $this->config->set("zaman","60");
+      }
+     //ve fazlası eklenebilir
     }
     public function OnDisable(){
         $this->getLogger()->info("§8[§cBed§4Wars§8]§c Plugin Deaktifleştirildi");
         $this->getScheduler()->getschedulerRepeatingTask(new CallbackTask([$this,"lobbysan"]),20);
+        $this->config->save();
     }
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         switch($cmd->getName()){
