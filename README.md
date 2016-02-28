@@ -1,4 +1,5 @@
-(http://i.imgur.com/aWqV72T.jpg)
+[Imgur](http://i.imgur.com/aWqV72T.jpg)
+
 # BedwarsTR
 Bedwars Plugin Pocketmine ! YAKINDA
 
