@@ -40,7 +40,7 @@ private $yteam;
 
     public function onEnable(){
       $this->getLogger()->info("§8[§cBed§4WarsTR§8]§a Plugin aktifleştirildi");
-      $this->getScheduler()->getschedulerRepeatingTask(new CallbackTask([$this,"lobbysan"]),20);
+      $this->getScheduler()->schedulerRepeatingTask(new CallbackTask([$this,"lobbysan"]),20);
       @mkdir($this->getDataFolder(), 0777, true);
       $this->config=new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
       $this->saniye=0;
