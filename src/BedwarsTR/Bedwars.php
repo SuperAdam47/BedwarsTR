@@ -33,10 +33,13 @@ use pocketmine\utils\TextFormat;
 
 class Bedwars extends PluginBase implements Listener{
 
-private $kteam;
-private $mteam;
-private $steam;
-private $yteam;
+public $kteam = array();
+
+public $mteam = array();
+
+public $steam = array();
+
+public $yteam = array();
 
     public function onEnable(){
       $this->getLogger()->info("§8[§cBed§4WarsTR§8]§a Plugin aktifleştirildi");
@@ -44,6 +47,7 @@ private $yteam;
       @mkdir($this->getDataFolder(), 0777, true);
       $this->config=new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
       $this->saniye=0;
+      $this->players = array();
       if(!$this->config->exists("bwlobby")){
         $this->config->set("bwlobby","bw");
       }
@@ -62,8 +66,9 @@ private $yteam;
             case "bw":
             $sender->sendMessage("§6Tüm Komutlar:");
             $sender->sendMessage("§d - /bw başlat :§e Oyunu Başatır(Adminler İçin)");
-$sender->sendMessage("§b- /bw katıl :§e BedWarsa Katılınılır.");
-$sender->sendMessage("§6©===========================©");
+            $sender->sendMessage("§b- /bw katıl :§e BedWarsa Katılınılır.");
+            $sender->sendMessage(TextFormat::GOLD."/bw :" .TextFormat::YELLOW. "Lobbye İsinlar.");
+            $sender->sendMessage("§6©===========================©");
             break;
             case "başlat":
             $this->saniye=10;
@@ -103,6 +108,9 @@ case 0:
 }
 }
 
-
+public function sendMessage($msg){
+//Mesajlar sadece Consolda Gozukucektir!!! [SİMDİLİK]
+$this->getServer()->getLogger()->info($msg);
+}
 }
 ?>
