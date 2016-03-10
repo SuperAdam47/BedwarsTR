@@ -1,7 +1,7 @@
 name: BedWarsTR
 main: BedWarsTR\Bedwars
-api: [1.3.0]
-version: 1.0.0
+api: [1.13.0]
+version: 1.0.0INDEV
 author: PMTurkeyDevelopers
 
 commands:
