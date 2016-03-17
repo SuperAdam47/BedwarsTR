@@ -22,6 +22,6 @@ The plugin created By Pocketmine Türkiye Geliştiricileri.Plugin is coding.You 
 - ending popups(easy)
 - add teams(Normal)
 - add point system(Normal)
-- add MapReseter(Normal and Hard :D)
+- add MapRestarter(Normal and Hard :D)
 - add EventListener(Normal)
 - And More Code (Normal)
